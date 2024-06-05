@@ -10,7 +10,11 @@ name: Run integration test on pull request to main
 
 on:
   pull_request:
-    branches: [ "main" ]
+    branches:
+      - main
+  push:
+    branches:
+      - ci/*
 
 jobs:
   build:
