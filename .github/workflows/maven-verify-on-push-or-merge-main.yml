@@ -11,16 +11,16 @@ name: Run maven verify on push or merge main branch
 on:
   push:
     branches:
-    - feature/*
     - ci/*
   pull_request:
     branches:
     - main
-    types: [ closed ]
+    types:
+    - closed
 
 jobs:
   maven:
-
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
 
     steps:
